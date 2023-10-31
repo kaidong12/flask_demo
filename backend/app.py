@@ -1,4 +1,5 @@
 import json
+import os
 
 from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
@@ -41,38 +42,38 @@ def get_data2():
             'results': json.loads(data)
         }
 
-@app.route("/uploadfile", methods=["POST"])
-def upload_file():
-    print("-----------------------")
-    if request.method == 'POST':
-        shop_id = request.args.get('shop_id', '')
-        BASE_DIR = os.path.dirname(os.path.realpath(sys.argv[0]))
-        if shop_id != "":
-            shop_path = 'utils/cert/' + str(shop_id)
-
-            dstpath = os.path.join(BASE_DIR, shop_path)
-            if not os.path.exists(dstpath):
-                os.makedirs(dstpath)
-                print(f"文件夹 {dstpath} 创建成功！")
-            else:
-                print(f"文件夹 {dstpath} 已经存在。")
-        ts = request.files.getlist("file")
-        obj = ShopInfo.query.filter(ShopInfo.id == int(shop_id)).first()
-
-        if len(ts) > 0:
-            for item in ts:
-                secure_filename(item.filename)
-                file = item.filename.split('/')[1]
-                item.save(dstpath + '/' + file)
-                if 'key' in file:
-                    obj.user_account = dstpath + '/' + file
-                    db.session.commit()
-
-        return jsonify({
-            "code": "200",
-            "data": "",
-            "msg": "文件上传成功"
-        })
+# @app.route("/uploadfile", methods=["POST"])
+# def upload_file():
+#     print("-----------------------")
+#     if request.method == 'POST':
+#         shop_id = request.args.get('shop_id', '')
+#         BASE_DIR = os.path.dirname(os.path.realpath(sys.argv[0]))
+#         if shop_id != "":
+#             shop_path = 'utils/cert/' + str(shop_id)
+#
+#             dstpath = os.path.join(BASE_DIR, shop_path)
+#             if not os.path.exists(dstpath):
+#                 os.makedirs(dstpath)
+#                 print(f"文件夹 {dstpath} 创建成功！")
+#             else:
+#                 print(f"文件夹 {dstpath} 已经存在。")
+#         ts = request.files.getlist("file")
+#         obj = ShopInfo.query.filter(ShopInfo.id == int(shop_id)).first()
+#
+#         if len(ts) > 0:
+#             for item in ts:
+#                 secure_filename(item.filename)
+#                 file = item.filename.split('/')[1]
+#                 item.save(dstpath + '/' + file)
+#                 if 'key' in file:
+#                     obj.user_account = dstpath + '/' + file
+#                     db.session.commit()
+#
+#         return jsonify({
+#             "code": "200",
+#             "data": "",
+#             "msg": "文件上传成功"
+#         })
 
 class BookApi(MethodView):
     def get(self, book_id):
