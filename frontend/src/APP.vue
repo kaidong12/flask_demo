@@ -3,20 +3,45 @@
         text-color="#fff" active-text-color="#ffd04b" @select="handleSelect">
         <el-menu-item index="1">Home</el-menu-item>
         <el-sub-menu index="2">
-            <template #title>Workspace</template>
-            <el-menu-item index="2-1">Hello World</el-menu-item>
-            <el-menu-item index="2-2">Books</el-menu-item>
-            <el-menu-item index="2-3">Json Data 1</el-menu-item>
-            <el-menu-item index="2-4">Upload File</el-menu-item>
-            <el-sub-menu index="2-5">
-                <template #title>item four</template>
-                <el-menu-item index="2-5-1">item one</el-menu-item>
-                <el-menu-item index="2-5-2">item two</el-menu-item>
-                <el-menu-item index="2-5-3">item three</el-menu-item>
+            <template #title>Runoob</template>
+            <el-sub-menu index="2-1">
+                <template #title>Basic</template>
+                <el-menu-item index="2-1-1">Hello Vue</el-menu-item>
+                <el-menu-item index="2-1-2">v-bind</el-menu-item>
+                <el-menu-item index="2-1-3">v-model</el-menu-item>
+                <el-menu-item index="2-1-4">v-show</el-menu-item>
+                <el-menu-item index="2-1-5">v-if</el-menu-item>
+                <el-menu-item index="2-1-6">v-for</el-menu-item>
+            </el-sub-menu>
+            <el-sub-menu index="2-2">
+                <template #title>Medium</template>
+                <el-menu-item index="2-2-1">item one</el-menu-item>
+                <el-menu-item index="2-2-2">item two</el-menu-item>
+                <el-menu-item index="2-2-3">item three</el-menu-item>
+            </el-sub-menu>
+            <el-sub-menu index="2-3">
+                <template #title>Advanced</template>
+                <el-menu-item index="2-3-1">item one</el-menu-item>
+                <el-menu-item index="2-3-2">item two</el-menu-item>
+                <el-menu-item index="2-3-3">item three</el-menu-item>
             </el-sub-menu>
         </el-sub-menu>
-        <el-menu-item index="3">Info</el-menu-item>
-        <el-menu-item index="4">Orders</el-menu-item>
+        <el-sub-menu index="3">
+            <template #title>Example</template>
+            <el-menu-item index="3-1">Hello World</el-menu-item>
+            <el-menu-item index="3-2">Fold</el-menu-item>
+            <el-menu-item index="3-3">Books</el-menu-item>
+            <el-menu-item index="3-4">Json Data 1</el-menu-item>
+            <el-menu-item index="3-5">Upload File</el-menu-item>
+            <el-sub-menu index="3-5">
+                <template #title>item four</template>
+                <el-menu-item index="3-5-1">item one</el-menu-item>
+                <el-menu-item index="3-5-2">item two</el-menu-item>
+                <el-menu-item index="3-5-3">item three</el-menu-item>
+            </el-sub-menu>
+        </el-sub-menu>
+        <el-menu-item index="4">Other</el-menu-item>
+        <el-menu-item index="5">Help</el-menu-item>
     </el-menu>
 
     <div id="app">
@@ -40,19 +65,34 @@ const router = useRouter();
 const activeIndex = ref('1')
 const activeIndex2 = ref('1')
 const handleSelect = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath[1])
+    console.log(key, keyPath[0], keyPath[1])
     if (keyPath[0] == "1") {
         router.push({ path: "/" })
         // router.replace({ path: "目标路由位置")
         // router.go()
+    } else if (key == "2-1-1") {
+        router.push({ path: "/hellovue" })
+    } else if (key == "2-1-2") {
+        router.push({ path: "/vbind" })
+    } else if (key == "2-1-3") {
+        router.push({ path: "/vmodel" })
+    } else if (key == "2-1-4") {
+        router.push({ path: "/vshow" })
+    } else if (key == "2-1-5") {
+        router.push({ path: "/vif" })
+    } else if (key == "2-1-6") {
+        router.push({ path: "/vfor" })
     }
-    else if (keyPath[0] == "2" && keyPath[1] === "2-1") {
+
+    if (key == "3-1") {
         router.push({ path: "/hello" })
-    } else if (keyPath[0] == "2" && keyPath[1] === "2-2") {
+    } else if (key == "3-2") {
+        router.push({ path: "/fold" })
+    } else if (key == "3-3") {
         router.push({ path: "/books" })
-    } else if (keyPath[0] == "2" && keyPath[1] === "2-3") {
+    } else if (key == "3-4") {
         router.push({ path: "/json1" })
-    } else if (keyPath[0] == "2" && keyPath[1] === "2-4") {
+    } else if (key == "3-5") {
         router.push({ path: "/upload" })
     }
 }
