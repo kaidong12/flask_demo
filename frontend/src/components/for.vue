@@ -2,7 +2,7 @@
     <div>
         <ol>
             <li v-for="(site, index) in sites1">
-                {{ index }} -{{ site.text }}
+                {{ index }} - {{ site.text }}
             </li>
         </ol>
     </div>

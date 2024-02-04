@@ -1,6 +1,8 @@
 <template>
     <div id="hello-vue" class="demo">
         {{ message }}
+        <br>
+        {{ a.map(v => ({ num: v })) }}
     </div>
 </template>
 
@@ -12,7 +14,8 @@ export default {
     },
     data() {
         return {
-            message: 'Hello Vue!!'
+            message: 'Hello Vue!!',
+            a: [1, 2, 3, 4, 5]
         }
     }
 }

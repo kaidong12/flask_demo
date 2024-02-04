@@ -12,10 +12,17 @@
                 <el-menu-item index="2-1-4">v-show</el-menu-item>
                 <el-menu-item index="2-1-5">v-if</el-menu-item>
                 <el-menu-item index="2-1-6">v-for</el-menu-item>
+                <el-menu-item index="2-1-7">v-text</el-menu-item>
+                <el-menu-item index="2-1-8">v-on</el-menu-item>
+                <el-menu-item index="2-1-9">ref</el-menu-item>
+                <el-menu-item index="2-1-13">Reactive</el-menu-item>
+                <el-menu-item index="2-1-10">Computed1</el-menu-item>
+                <el-menu-item index="2-1-11">Computed2</el-menu-item>
+                <el-menu-item index="2-1-12">Computed3</el-menu-item>
             </el-sub-menu>
             <el-sub-menu index="2-2">
                 <template #title>Medium</template>
-                <el-menu-item index="2-2-1">item one</el-menu-item>
+                <el-menu-item index="2-2-1">life cycle</el-menu-item>
                 <el-menu-item index="2-2-2">item two</el-menu-item>
                 <el-menu-item index="2-2-3">item three</el-menu-item>
             </el-sub-menu>
@@ -32,7 +39,8 @@
             <el-menu-item index="3-2">Fold</el-menu-item>
             <el-menu-item index="3-3">Books</el-menu-item>
             <el-menu-item index="3-4">Json Data 1</el-menu-item>
-            <el-menu-item index="3-5">Upload File</el-menu-item>
+            <el-menu-item index="3-5">Rain</el-menu-item>
+            <el-menu-item index="3-6">Upload File</el-menu-item>
             <el-sub-menu index="3-5">
                 <template #title>item four</template>
                 <el-menu-item index="3-5-1">item one</el-menu-item>
@@ -57,7 +65,7 @@
     </div>
 </template>
   
-<script lang="ts" setup>
+<script  setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from "vue-router"
 
@@ -82,6 +90,22 @@ const handleSelect = (key: string, keyPath: string[]) => {
         router.push({ path: "/vif" })
     } else if (key == "2-1-6") {
         router.push({ path: "/vfor" })
+    } else if (key == "2-1-7") {
+        router.push({ path: "/vtext" })
+    } else if (key == "2-1-8") {
+        router.push({ path: "/von" })
+    } else if (key == "2-1-9") {
+        router.push({ path: "/ref1" })
+    } else if (key == "2-1-10") {
+        router.push({ path: "/computed1" })
+    } else if (key == "2-1-11") {
+        router.push({ path: "/computed2" })
+    } else if (key == "2-1-12") {
+        router.push({ path: "/computed3" })
+    } else if (key == "2-1-13") {
+        router.push({ path: "/reactive" })
+    } else if (key == "2-2-1") {
+        router.push({ path: "/lifecycle" })
     }
 
     if (key == "3-1") {
@@ -93,6 +117,8 @@ const handleSelect = (key: string, keyPath: string[]) => {
     } else if (key == "3-4") {
         router.push({ path: "/json1" })
     } else if (key == "3-5") {
+        router.push({ path: "/rain" })
+    } else if (key == "3-6") {
         router.push({ path: "/upload" })
     }
 }

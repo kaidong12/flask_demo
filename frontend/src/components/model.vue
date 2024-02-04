@@ -15,6 +15,7 @@
             <input type="checkbox" v-model="use">
             <p>{{ use }}</p>
         </div>
+
         <br>
     </div>
 </template>
