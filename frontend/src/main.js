@@ -4,10 +4,13 @@ import 'element-plus/dist/index.css'
 import router from './router'
 import axios from 'axios'
 
-
 import App from './App.vue'
 import Bottom from './components/Bottom.vue'
 import Top from './components/Top.vue'
+
+
+// 引入 echarts
+import * as echarts from 'echarts'
 
 
 // 设置全局变量
@@ -21,3 +24,6 @@ app.component('bottom', Bottom)
 app.use(ElementPlus)
 app.use(router)
 app.mount('#app')
+
+// 全局挂载 echarts
+app.config.globalProperties.$echarts = echarts

@@ -24,6 +24,21 @@ import Upload from './components/upload_file.vue'
 
 import Rain from './components/ts/rain.vue'
 
+import Echarts0 from './components/echarts0.vue'
+import Echarts1 from './components/echarts1.vue'
+import Echarts2 from './components/echarts2.vue'
+import Echarts3 from './components/echarts3.vue'
+import Echarts4 from './components/echarts4.vue'
+import Echarts4_2 from './components/echarts4_2.vue'
+import MTBF1 from './components/mtbf1.vue'
+import MTBF2 from './components/mtbf2.vue'
+
+import Calendar1 from './components/calendar1.vue'
+import Calendar2 from './components/calendar2.vue'
+import DatePicker1 from './components/datepicker1.vue'
+import DatePicker2 from './components/datepicker2.vue'
+import DatePicker3 from './components/datepicker3.vue'
+
 import * as VueRouter from 'vue-router'
 
 const routes = [
@@ -122,7 +137,73 @@ const routes = [
     path: '/upload',
     name: 'Upload',
     component: Upload,
+  },
+  {
+    path: '/echarts0',
+    name: 'echarts0',
+    component: Echarts0,
+  },
+  {
+    path: '/echarts1',
+    name: 'echarts1',
+    component: Echarts1,
+  },
+  {
+    path: '/echarts2',
+    name: 'echarts2',
+    component: Echarts2,
+  },
+  {
+    path: '/echarts3',
+    name: 'echarts3',
+    component: Echarts3,
+  },
+  {
+    path: '/echarts4',
+    name: 'echarts4',
+    component: Echarts4,
+  },
+  {
+    path: '/echarts4_2',
+    name: 'echarts4_2',
+    component: Echarts4_2,
+  },
+  {
+    path: '/mtbf1',
+    name: 'mtbf1',
+    component: MTBF1,
+  },
+  {
+    path: '/mtbf2',
+    name: 'mtbf2',
+    component: MTBF2,
+  },
+  {
+    path: '/calendar1',
+    name: 'calendar1',
+    component: Calendar1,
+  },
+  {
+    path: '/calendar2',
+    name: 'calendar2',
+    component: Calendar2,
+  },
+  {
+    path: '/datepicker1',
+    name: 'datepicker1',
+    component: DatePicker1,
+  },
+  {
+    path: '/datepicker2',
+    name: 'datepicker2',
+    component: DatePicker2,
+  },
+  {
+    path: '/datepicker3',
+    name: 'datepicker3',
+    component: DatePicker3,
   }
+  
 ]
 
 const router = VueRouter.createRouter({
