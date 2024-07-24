@@ -59,9 +59,16 @@
         <el-menu-item index="3-5-6">Echarts-MTBF1</el-menu-item>
         <el-menu-item index="3-5-7">Echarts-MTBF2</el-menu-item>
       </el-sub-menu>
-      <el-menu-item index="3-6">Upload File</el-menu-item>
+      <el-sub-menu index="3-6">
+        <template #title>Upload File</template>
+        <el-menu-item index="3-6-1">Upload One File 1</el-menu-item>
+        <el-menu-item index="3-6-2">Upload One File 2</el-menu-item>
+        <el-menu-item index="3-6-3">Upload Multiple File 1</el-menu-item>
+        <el-menu-item index="3-6-4">Upload Multiple File 2</el-menu-item>
+      </el-sub-menu>
       <el-menu-item index="3-7">Rain</el-menu-item>
-      <el-menu-item index="3-8">Item 8</el-menu-item>
+      <el-menu-item index="3-8">Tree1</el-menu-item>
+      <el-menu-item index="3-9">Tree2</el-menu-item>
     </el-sub-menu>
     <el-menu-item index="4">Other</el-menu-item>
     <el-menu-item index="5">Help</el-menu-item>
@@ -157,10 +164,20 @@ const handleSelect = (key: string, keyPath: string[]) => {
     router.push({ path: "/mtbf1" });
   } else if (key == "3-5-7") {
     router.push({ path: "/mtbf2" });
-  } else if (key == "3-6") {
-    router.push({ path: "/upload" });
+  } else if (key == "3-6-1") {
+    router.push({ path: "/upload1" });
+  } else if (key == "3-6-2") {
+    router.push({ path: "/upload2" });
+  } else if (key == "3-6-3") {
+    router.push({ path: "/uploadm1" });
+  } else if (key == "3-6-4") {
+    router.push({ path: "/uploadm2" });
   } else if (key == "3-7") {
     router.push({ path: "/rain" });
+  } else if (key == "3-8") {
+    router.push({ path: "/tree1" });
+  } else if (key == "3-9") {
+    router.push({ path: "/tree2" });
   }
 };
 

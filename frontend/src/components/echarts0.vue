@@ -19,8 +19,16 @@ let echarts = internalInstance.appContext.config.globalProperties.$echarts;
 
 onMounted(() => {
   const dom = document.getElementById("myChart");
-  const myChart = echarts.init(dom); // 初始化echarts实例
+  myChart = echarts.init(dom); // 初始化echarts实例
   const option = {
+    title: {
+      text: "ECharts 入门示例",
+    },
+    tooltip: {},
+    legend: {
+      data: ["销量", "库存"],
+    },
+    // 设置x轴和y轴
     xAxis: {
       type: "category",
       data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -30,9 +38,17 @@ onMounted(() => {
     },
     series: [
       {
+        name: "销量",
         data: [820, 932, 901, 934, 1290, 1330, 1320],
         type: "line",
         smooth: true,
+      },
+      {
+        name: "库存",
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: "bar",
+        smooth: true,
+        barWidth: 50,
       },
     ],
   };

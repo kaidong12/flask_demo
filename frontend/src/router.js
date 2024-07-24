@@ -20,7 +20,14 @@ import JsonData1 from './components/get_data_2.vue'
 import Books from './components/Books.vue'
 
 import Home from './components/Home.vue'
-import Upload from './components/upload_file.vue'
+
+import Upload1 from './components/upload_file_1.vue'
+import Upload2 from './components/upload_file_2.vue'
+import Uploadm1 from './components/upload_file_m1.vue'
+import Uploadm2 from './components/upload_file_m2.vue'
+
+import Tree1 from './components/tree1.vue'
+import Tree2 from './components/tree2.vue'
 
 import Rain from './components/ts/rain.vue'
 
@@ -134,9 +141,34 @@ const routes = [
     component: Rain,
   },
   {
-    path: '/upload',
-    name: 'Upload',
-    component: Upload,
+    path: '/upload1',
+    name: 'Upload1',
+    component: Upload1,
+  },
+  {
+    path: '/upload2',
+    name: 'Upload2',
+    component: Upload2,
+  },
+  {
+    path: '/uploadm1',
+    name: 'Uploadm1',
+    component: Uploadm1,
+  },
+  {
+    path: '/uploadm2',
+    name: 'Uploadm2',
+    component: Uploadm2,
+  },
+  {
+    path: '/tree1',
+    name: 'Tree1',
+    component: Tree1,
+  },
+  {
+    path: '/tree2',
+    name: 'Tree2',
+    component: Tree2,
   },
   {
     path: '/echarts0',

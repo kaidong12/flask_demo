@@ -7,6 +7,9 @@
   <!-- 注意: 如果没有设置width属性(或者设置100%)，居中对齐将不起作用。 -->
   <!-- 注意: 如果没有设置width属性(或者设置100%)，居中对齐将不起作用。 -->
   <!-- 注意: 如果没有设置width属性(或者设置100%)，居中对齐将不起作用。 -->
+  <div>
+    <el-button type="primary" @click="reset_chart">Reset</el-button>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -17,15 +20,28 @@ import { getCurrentInstance, onMounted } from "vue";
 let internalInstance = getCurrentInstance();
 let echarts = internalInstance.appContext.config.globalProperties.$echarts;
 
+var myChart;
+var myOption;
+
+function reset_chart() {
+  console.log("reset_chart");
+
+  // myChart.dispose();
+
+  myChart.clear();
+
+  // myChart.setOption(myOption, true);
+  // var ops = myChart.getOption();
+  // console.log(ops);
+}
+
 onMounted(() => {
   const dom = document.getElementById("myChart");
-  var myChart = echarts.init(dom, null, {
+  myChart = echarts.init(dom, null, {
     renderer: "canvas",
     useDirtyRect: false,
   });
   var app = {};
-
-  var option;
 
   var data = [];
   var dataCount = 100; // 测试数据条数
@@ -151,7 +167,7 @@ onMounted(() => {
     };
   }
 
-  option = {
+  myOption = {
     tooltip: {
       formatter: function (params) {
         console.log(params);
@@ -169,6 +185,59 @@ onMounted(() => {
       bottom: 30,
       right: 20,
       selectedMode: false,
+    },
+    toolbox: {
+      orient: "vertical",
+      feature: {
+        myTool: {
+          show: true, // 是否显示
+          title: "refresh", // 工具标题
+          icon: "m21.897 13.404.008-.057v.002c.024-.178.044-.357.058-.537.024-.302-.189-.811-.749-.811-.391 0-.715.3-.747.69-.018.221-.044.44-.078.656-.645 4.051-4.158 7.153-8.391 7.153-3.037 0-5.704-1.597-7.206-3.995l1.991-.005c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-4.033c-.414 0-.75.336-.75.75v4.049c0 .414.336.75.75.75s.75-.335.75-.75l.003-2.525c1.765 2.836 4.911 4.726 8.495 4.726 5.042 0 9.217-3.741 9.899-8.596zm-19.774-2.974-.009.056v-.002c-.035.233-.063.469-.082.708-.024.302.189.811.749.811.391 0 .715-.3.747-.69.022-.28.058-.556.107-.827.716-3.968 4.189-6.982 8.362-6.982 3.037 0 5.704 1.597 7.206 3.995l-1.991.005c-.414 0-.75.336-.75.75s.336.75.75.75h4.033c.414 0 .75-.336.75-.75v-4.049c0-.414-.336-.75-.75-.75s-.75.335-.75.75l-.003 2.525c-1.765-2.836-4.911-4.726-8.495-4.726-4.984 0-9.12 3.654-9.874 8.426z",
+          onclick: function (echartsInstance) {
+            // 获取当前图表的配置选项
+            const option = echartsInstance.getOption();
+            console.log("当前图表配置:", option);
+            const zoom = option.dataZoom[0];
+            var dataZoom1 = [
+              {
+                type: "slider",
+                filterMode: "weakFilter",
+                showDataShadow: false,
+                top: 400,
+                height: 10,
+                start: 0,
+                end: 100,
+                borderColor: "transparent",
+                backgroundColor: "#e2e2e2",
+                handleIcon:
+                  "M10.7,11.9H9.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z", // jshint ignore:line
+                handleSize: 20,
+                handleStyle: {
+                  shadowBlur: 6,
+                  shadowOffsetX: 1,
+                  shadowOffsetY: 2,
+                  shadowColor: "#aaa",
+                },
+                labelFormatter: "",
+              },
+              {
+                type: "inside",
+                filterMode: "weakFilter",
+              },
+            ];
+            console.log("zoom:", dataZoom1);
+            option.dataZoom[0] = dataZoom1;
+            echartsInstance.setOption(option);
+          },
+          iconStyle: {
+            // borderColor: '#fff',
+            // borderWidth: 2
+          },
+          emphasis: {
+            iconStyle: {},
+          },
+        },
+      },
     },
     dataZoom: [
       {
@@ -235,6 +304,6 @@ onMounted(() => {
   };
 
   // 设置实例参数
-  myChart.setOption(option);
+  myChart.setOption(myOption);
 });
 </script>
