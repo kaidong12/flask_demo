@@ -67,10 +67,34 @@
         <el-menu-item index="3-6-4">Upload Multiple File 2</el-menu-item>
       </el-sub-menu>
       <el-menu-item index="3-7">Rain</el-menu-item>
-      <el-menu-item index="3-8">Tree1</el-menu-item>
-      <el-menu-item index="3-9">Tree2</el-menu-item>
+      <el-sub-menu index="3-8">
+        <template #title>Tree</template>
+        <el-menu-item index="3-8-1">Tree1-Filter</el-menu-item>
+        <el-menu-item index="3-8-2">Tree2-Checkbox</el-menu-item>
+        <el-menu-item index="3-8-3">Tree3-Draggable</el-menu-item>
+      </el-sub-menu>
+      <el-sub-menu index="3-9">
+        <template #title>Table</template>
+        <el-menu-item index="3-9-1">Table1-v1</el-menu-item>
+        <el-menu-item index="3-9-2">Table2-v2</el-menu-item>
+        <el-menu-item index="3-9-3">Table3-v1</el-menu-item>
+      </el-sub-menu>
+      <el-menu-item index="3-10">Validator</el-menu-item>
     </el-sub-menu>
-    <el-menu-item index="4">Other</el-menu-item>
+    <el-sub-menu index="4">
+      <template #title>Java Script</template>
+      <el-menu-item index="4-1">Hello World</el-menu-item>
+      <el-sub-menu index="4-2">
+        <template #title>Timer</template>
+        <el-menu-item index="4-2-1">setTimeout</el-menu-item>
+        <el-menu-item index="4-2-2">setInterval</el-menu-item>
+      </el-sub-menu>
+      <el-sub-menu index="4-3">
+        <template #title>Upload File</template>
+        <el-menu-item index="4-3-1">Upload One File 1</el-menu-item>
+      </el-sub-menu>
+      <el-menu-item index="4-4">Rain</el-menu-item>
+    </el-sub-menu>
     <el-menu-item index="5">Help</el-menu-item>
   </el-menu>
 
@@ -174,10 +198,28 @@ const handleSelect = (key: string, keyPath: string[]) => {
     router.push({ path: "/uploadm2" });
   } else if (key == "3-7") {
     router.push({ path: "/rain" });
-  } else if (key == "3-8") {
+  } else if (key == "3-8-1") {
     router.push({ path: "/tree1" });
-  } else if (key == "3-9") {
+  } else if (key == "3-8-2") {
     router.push({ path: "/tree2" });
+  } else if (key == "3-8-3") {
+    router.push({ path: "/tree3" });
+  } else if (key == "3-9-1") {
+    router.push({ path: "/table1" });
+  } else if (key == "3-9-2") {
+    router.push({ path: "/table2" });
+  } else if (key == "3-9-3") {
+    router.push({ path: "/table3" });
+  } else if (key == "3-10") {
+    router.push({ path: "/validator" });
+  }
+
+  if (key == "4-1") {
+    router.push({ path: "/hello" });
+  } else if (key == "4-2-1") {
+    router.push({ path: "/setTimeout" });
+  } else if (key == "4-2-2") {
+    router.push({ path: "/setTimerInterval" });
   }
 };
 

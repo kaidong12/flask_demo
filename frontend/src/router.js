@@ -1,50 +1,59 @@
-import HelloVue from './components/hello_vue.vue'
-import Fold from './components/fold.vue'
-import Bind from './components/bind.vue'
-import Model from './components/model.vue'
-import Show from './components/show.vue'
-import If from './components/if.vue'
-import For from './components/for.vue'
-import Text from './components/text.vue'
-import On from './components/on.vue'
-import Ref from './components/ref.vue'
-import Reactive from './components/reactive.vue'
-import Computed1 from './components/computed1.vue'
-import Computed2 from './components/computed2.vue'
-import Computed3 from './components/computed3.vue'
-
-import Lifecycle from './components/lifecycle.vue'
-
-import HelloWorld from './components/get_data_1.vue'
-import JsonData1 from './components/get_data_2.vue'
-import Books from './components/Books.vue'
-
 import Home from './components/Home.vue'
 
-import Upload1 from './components/upload_file_1.vue'
-import Upload2 from './components/upload_file_2.vue'
-import Uploadm1 from './components/upload_file_m1.vue'
-import Uploadm2 from './components/upload_file_m2.vue'
+import HelloVue from './components/runoob/hello_vue.vue'
+import Bind from './components/runoob/bind.vue'
+import Model from './components/runoob/model.vue'
+import Show from './components/runoob/show.vue'
+import If from './components/runoob/if.vue'
+import For from './components/runoob/for.vue'
+import Text from './components/runoob/text.vue'
+import On from './components/runoob/on.vue'
+import Ref from './components/runoob/ref.vue'
+import Lifecycle from './components/runoob/lifecycle.vue'
+import Reactive from './components/runoob/reactive.vue'
+import Computed1 from './components/runoob/computed1.vue'
+import Computed2 from './components/runoob/computed2.vue'
+import Computed3 from './components/runoob/computed3.vue'
 
-import Tree1 from './components/tree1.vue'
-import Tree2 from './components/tree2.vue'
+import HelloWorld from './components/examples/get_data_1.vue'
+import JsonData1 from './components/examples/get_data_2.vue'
+
+import Books from './components/examples/Books.vue'
+import Fold from './components/examples/fold.vue'
+
+import Upload1 from './components/examples/upload_file_1.vue'
+import Upload2 from './components/examples/upload_file_2.vue'
+import Uploadm1 from './components/examples/upload_file_m1.vue'
+import Uploadm2 from './components/examples/upload_file_m2.vue'
+
+import Tree1 from './components/examples/tree1_filter.vue'
+import Tree2 from './components/examples/tree2_checkbox.vue'
+import Tree3 from './components/examples/tree3_draggable.vue'
+
+import Echarts0 from './components/examples/echarts0.vue'
+import Echarts1 from './components/examples/echarts1.vue'
+import Echarts2 from './components/examples/echarts2.vue'
+import Echarts3 from './components/examples/echarts3.vue'
+import Echarts4 from './components/examples/echarts4.vue'
+import Echarts4_2 from './components/examples/echarts4_2.vue'
+import MTBF1 from './components/examples/mtbf1.vue'
+import MTBF2 from './components/examples/mtbf2.vue'
+
+import Validator from './components/examples/form_validator.vue'
+
+import Calendar1 from './components/runoob/calendar1.vue'
+import Calendar2 from './components/runoob/calendar2.vue'
+import DatePicker1 from './components/runoob/datepicker1.vue'
+import DatePicker2 from './components/runoob/datepicker2.vue'
+import DatePicker3 from './components/runoob/datepicker3.vue'
+
+import Table1 from './components/examples/table_1.vue'
+import Table2 from './components/examples/table_2.vue'
+import Table3 from './components/examples/table_3.vue'
 
 import Rain from './components/ts/rain.vue'
-
-import Echarts0 from './components/echarts0.vue'
-import Echarts1 from './components/echarts1.vue'
-import Echarts2 from './components/echarts2.vue'
-import Echarts3 from './components/echarts3.vue'
-import Echarts4 from './components/echarts4.vue'
-import Echarts4_2 from './components/echarts4_2.vue'
-import MTBF1 from './components/mtbf1.vue'
-import MTBF2 from './components/mtbf2.vue'
-
-import Calendar1 from './components/calendar1.vue'
-import Calendar2 from './components/calendar2.vue'
-import DatePicker1 from './components/datepicker1.vue'
-import DatePicker2 from './components/datepicker2.vue'
-import DatePicker3 from './components/datepicker3.vue'
+import SetTimerInterval from './components/ts/setInterval.vue'
+import SetTimeout from './components/ts/setTimeout.vue'
 
 import * as VueRouter from 'vue-router'
 
@@ -93,7 +102,7 @@ const routes = [
     component: On,
   },
   {
-    path: '/ref1',
+    path: '/refref1',
     component: Ref,
   },
   {
@@ -171,6 +180,11 @@ const routes = [
     component: Tree2,
   },
   {
+    path: '/tree3',
+    name: 'Tree3',
+    component: Tree3,
+  },
+  {
     path: '/echarts0',
     name: 'echarts0',
     component: Echarts0,
@@ -234,7 +248,35 @@ const routes = [
     path: '/datepicker3',
     name: 'datepicker3',
     component: DatePicker3,
-  }
+  },
+  {
+    path: '/setTimerInterval',
+    component: SetTimerInterval,
+  },
+  {
+    path: '/setTimeout',
+    component: SetTimeout,
+  },
+  {
+    path: '/table1',
+    name: 'Table1',
+    component: Table1,
+  },
+  {
+    path: '/table2',
+    name: 'Table2',
+    component: Table2,
+  },
+  {
+    path: '/table3',
+    name: 'Table3',
+    component: Table3,
+  },
+  {
+    path: '/validator',
+    name: 'Validator',
+    component: Validator,
+  },
   
 ]
 
